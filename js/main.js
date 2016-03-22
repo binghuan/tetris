@@ -595,6 +595,16 @@ $(document).ready(function() {
     $("#btn_autorun").click(function() {
         gameControllerID = setInterval(gameController, 100);
     });
+
+    $("#btn_reset").click(function() {
+        if (gameControllerID) {
+            clearInterval(gameControllerID);
+            gameControllerID = null;
+        }
+
+        init();
+    });
+
     init();
 
 
