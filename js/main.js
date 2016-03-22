@@ -1,6 +1,9 @@
 // Element to fill into block
-var dot1 = "<span style=\"color:black\">*</span>"; // dot 1 is for filled color dot
-var dot0 = "<span style=\"color:white\">*</span>"; // dot 1 is for non-filled color dot
+// var dot1 = "<span style=\"font-size: 16px; color:black\">*</span>"; // dot 1 is for filled color dot
+// var dot0 = "<span style=\"font-size: 16px; color:white\">*</span>"; // dot 1 is for non-filled color dot
+
+var dot1 = "<span class=\"glyphicon glyphicon-asterisk\" aria-hidden=\"true\"></span>"; // dot 1 is for filled color dot
+var dot0 = "<span class=\"glyphicon glyphicon-asterisk\" aria-hidden=\"true\" style=\"visibility: hidden\"></span>"; // dot 1 is for filled color
 
 var renderArea = [];
 var moveArea = [];
@@ -32,9 +35,9 @@ function render() {
 
         if (y < 10) {
             if (y < 2) {
-                html += "<span style=\"color:white\">0" + y + "</span>";
+                html += "<span style=\"font-size: 12px; color:white\">0" + y + "</span>";
             } else {
-                html += "<span>0" + (y - 2) + "</span>";
+                html += "<span style=\"font-size: 12px;\">0" + (y - 2) + "</span>";
             }
 
             //html += "<span>0" + (y) + "</span>";
@@ -42,9 +45,9 @@ function render() {
         } else {
             //html += "<span> " + y + "</span>";
             if ((y - 2) < 10) {
-                html += "<span>0" + (y - 2) + "</span>";
+                html += "<span style=\"font-size: 12px\">0" + (y - 2) + "</span>";
             } else {
-                html += "<span>" + (y -2) + "</span>";
+                html += "<span style=\"font-size: 12px\">" + (y - 2) + "</span>";
             }
         }
 
@@ -262,7 +265,7 @@ function gameController() {
         console.log("Generate New input");
         var x = Math.floor((Math.random() * 4) + 1);
         //inputType = x;
-        inputType = 4;
+        inputType = 1;
         switch (inputType) {
             case 0:
                 moveArea[1][0] = 1;
@@ -579,7 +582,7 @@ function rotate90(a) {
 $(document).ready(function() {
     containner = document.getElementById("containner");
     $("#btn_down").click(function() {
-        if(gameControllerID) {
+        if (gameControllerID) {
             clearInterval(gameControllerID);
             gameControllerID = null;
         }
