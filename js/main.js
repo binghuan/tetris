@@ -264,8 +264,8 @@ function gameController() {
     if (isMoveAreaEmpty()) {
         console.log("Generate New input");
         var x = Math.floor((Math.random() * 4) + 1);
-        //inputType = x;
-        inputType = 1;
+        inputType = x;
+        //inputType = 1;
         switch (inputType) {
             case 0:
                 moveArea[1][0] = 1;
@@ -463,11 +463,14 @@ $(document).keyup(function(e) {
             break;
         case arrow.up:
             console.log(">> up: ", e.which);
-            moveUp();
+            var backup = moveArea.slice(0);
+            clockWise();
             if (checkOverlap() == true) {
+                //counterClockwise();
                 console.log("Rollback !!");
-                moveDown();
+                moveArea = backup;
             }
+
             break;
         case arrow.down:
             console.log(">> down: ", e.which);
@@ -526,11 +529,16 @@ function counterClockwise() {
 
 function clockWise() {
     var pos1 = getMoveRange(moveArea);
-    for (var i = 0; i < 3; i++) {
-        moveArea = rotate90(moveArea);
-    }
-    var pos2 = getMoveRange(moveArea);
+    var newArea = rotate90(moveArea);
+    newArea = rotate90(newArea);
+    newArea = rotate90(newArea);
+    var pos2 = getMoveRange(newArea);
     if (pos2.maxY < 22 && pos2.maxX < 21 && pos2.minX > 0 && pos2.minY > 0) {
+        console.log("Good to go");
+        for(var i =0; i< 3; i++) {
+            moveArea = rotate90(moveArea);
+        }
+    } else {
         console.log("c Cannnot rotate");
         return;
     }
