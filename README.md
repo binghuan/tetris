@@ -8,31 +8,9 @@ If you feel some part of this spec is unclear or contradictory in some detail, p
 
 There are 5 different pieces in this version of Tetris
 
- input types
 
-```
-Type1:
-    ****
+<img src="images/pieceType.png" width="auto" height="240px">
 
-Type2:
-    *
-    *
-    **
-
-Type3:
-     *
-     *
-    **
-
-Type4:
-    *
-    **
-     *
-
-Type5:
-    **
-    **
-```
 
 and they fall down a 20x20 tetris board:
 
