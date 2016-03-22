@@ -18,10 +18,10 @@ and they fall down a 20x20 tetris board:
 --------------------------------------------------------------------------------
 
 The game starts with a random piece appearing at the top of the board. The user is then prompted to make a move: <br/>
-• a (return): move piece left <br/>
-• d (return): move piece right <br/>
-• w (return): rotate piece counter clockwise <br/>
-• s (return): rotate piece clockwise<br/>
+• <img src="images/key_a.png" width="36px">(return): move piece left<br/>
+• <img src="images/key_d.png" width="36px">(return): move piece right <br/>
+• <img src="images/key_w.png" width="36px"> (return): rotate piece counter clockwise <br/>
+• <img src="images/key_s.png" width="36px">(return): rotate piece clockwise<br/>
 
 If the move the user selects is valid, then it is executed and the screen redrawn (you can use printf()/cout/System.out.println(), etc to redraw the entire board).
 
