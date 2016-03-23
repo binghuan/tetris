@@ -4,12 +4,7 @@
 <img src="Icon.png" width="auto" height="240"><br/>
 link to launch to web app: <a href="http://binghuan.github.io/tetris/" target="_blank">http://binghuan.github.io/tetris/</a>
 
-#  
-Implement a simple 'text-mode' version of the Tetris game, following the specification below. You are free to use a language of your choice, but please don't go beyond the specification or add any features not explicitly requested.
-
-If you feel some part of this spec is unclear or contradictory in some detail, please resolve it using your best judgement, and make a note explaining your decision.
-
-There are 5 different pieces in this version of Tetris
+#### There are 5 different pieces in this version of Tetris
 
 
 <img src="images/pieceType.png" width="auto" height="240px">
