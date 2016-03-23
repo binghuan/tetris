@@ -1,6 +1,8 @@
 # tetris
 
-<a href="http://binghuan.github.io/tetris/" target="_blank">http://binghuan.github.io/tetris/</a>
+
+<img src="Icon.png" width="auto" height="240"><br/>
+link to launch to web app: <a href="http://binghuan.github.io/tetris/" target="_blank">http://binghuan.github.io/tetris/</a>
 
 #  
 Implement a simple 'text-mode' version of the Tetris game, following the specification below. You are free to use a language of your choice, but please don't go beyond the specification or add any features not explicitly requested.
