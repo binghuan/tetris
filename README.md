@@ -31,3 +31,6 @@ If the piece, drawn at its new location, is not outside the bounds of the board,
 If the piece's new position is such that it allows no valid move, then a new piece appears along the top of the board, randomly positioned along the x-axis.
 
 If this new piece happens offer no valid move, then the game is over and the program exits. Good Luck!
+
+<img src="images/Slide1.jpg" width="auto" height="480px"><br/>
+<img src="images/Slide2.jpg" width="auto" height="480px"><br/>
