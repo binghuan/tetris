@@ -440,6 +440,7 @@ $(document).keyup(function(e) {
     console.log(">> keyup: ", e.which);
 
     switch (e.which) {
+        case 65: // key: a -> left
         case arrow.left:
             if (getMoveRange(moveArea).minX > 1) {
                 console.log(">> left: ", e.which);
@@ -450,6 +451,7 @@ $(document).keyup(function(e) {
                 }
             };
             break;
+        case 68: // key: d -> right
         case arrow.right:
 
             if (getMoveRange(moveArea).maxX < 20) {
@@ -485,11 +487,6 @@ $(document).keyup(function(e) {
                 moveArea = backup;
             }
             break;
-        case 97: // key: a -> left
-            break;
-        case 100: // key: d -> right
-            break;
-
         case 87: // key: w ->
             var backup = moveArea.slice(0);
             counterClockwise();
