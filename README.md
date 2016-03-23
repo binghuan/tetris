@@ -1,4 +1,4 @@
-# tetris
+# Tetris
 
 
 <img src="Icon.png" width="auto" height="240"><br/>
