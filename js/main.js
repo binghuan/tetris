@@ -525,13 +525,14 @@ function counterClockwise() {
 }
 
 function clockWise() {
+    var originalPos = moveArea.slice(0);
     var pos1 = getMoveRange(moveArea);
     var newArea = rotate90(moveArea);
     newArea = rotate90(newArea);
     newArea = rotate90(newArea);
     var pos2 = getMoveRange(newArea);
     if (pos2.maxY < 22 && pos2.maxX < 21 && pos2.minX > 0 && pos2.minY > 0) {
-        console.log("Good to go");
+        console.log("Good to go?", pos2);
         for(var i =0; i< 3; i++) {
             moveArea = rotate90(moveArea);
         }
@@ -545,6 +546,10 @@ function clockWise() {
     diff = pos2.minX - pos1.minX;
     console.log(">> clockWise: diffY", diff);
     correctXmove(diff);
+    if(pos2 = getMoveRange(moveArea).maxX >= 21) {
+        moveArea = originalPos;
+        console.log("c Cannnot rotate!!")
+    }
 }
 
 function correctXmove(diff) {
