@@ -584,6 +584,32 @@ function rotate90(a) {
     return a;
 }
 
+var currentLv = 9;
+
+function getInterval() {
+    return (10 - currentLv)*100;
+}
+
+function startWithNewLv() {
+    if(gameControllerID != null) {
+        clearInterval(gameControllerID);
+        gameControllerID = setInterval(gameController, getInterval());
+    }
+}
+
+function setupLv(level) {
+
+    console.log("setupLv:", level);
+    $("#lv_" + currentLv ).attr("class", "");
+    currentLv = level;
+    $("#lv_" + currentLv ).attr("class", "active");
+
+    if(gameControllerID != null) {
+        clearInterval(gameControllerID);
+        gameControllerID = setInterval(gameController, getInterval());
+    }
+}
+
 $(document).ready(function() {
     containner = document.getElementById("containner");
     $("#btn_down").click(function() {
@@ -598,8 +624,25 @@ $(document).ready(function() {
         clearInterval(gameControllerID);
     });
     $("#btn_autorun").click(function() {
-        gameControllerID = setInterval(gameController, 100);
+        gameControllerID = setInterval(gameController, getInterval());
     });
+
+    $("#lv_down").click(function() {
+        console.log("lv down");
+        if(currentLv -1 > 0) {
+            setupLv(currentLv - 1);
+        }
+
+    });
+
+    $("#lv_up").click(function() {
+        console.log("lv down");
+        if(currentLv + 1 < 10) {
+            setupLv(currentLv + 1);
+        }
+
+    });
+
 
     $("#btn_reset").click(function() {
         if (gameControllerID) {
