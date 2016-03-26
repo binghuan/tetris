@@ -10,6 +10,9 @@ var moveArea = [];
 var moveIndex = -1;
 
 function clearAll() {
+
+    $("#message").hide();
+
     for (var i = 0; i < 23; i++) {
         renderArea[i] = [];
         moveArea[i] = [];
@@ -335,7 +338,7 @@ function gameController() {
     var isOverlap = checkOverlap();
     if (isOverlap == true) {
         clearInterval(gameControllerID);
-        alert("Game Over");
+        $("#message").show();
         console.log("## Game Over !!!!");
         return;
     }
@@ -615,8 +618,13 @@ function setupLv(level) {
     }
 }
 
+var msgLabel = null;
+
 $(document).ready(function() {
     containner = document.getElementById("containner");
+
+    msgLabel = document.getElementById("message");
+
     $("#btn_down").click(function() {
         if (gameControllerID) {
             clearInterval(gameControllerID);
