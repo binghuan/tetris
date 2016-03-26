@@ -5,7 +5,7 @@
 
 <p>My blog<a href="http://studiobinghuan.blogspot.tw/?view=flipcard">http://studiobinghuan.blogspot.tw/?view=flipcard</a></p><br/>
 
-link to launch to web app: <a href="http://binghuan.github.io/tetris/" target="_blank">http://binghuan.github.io/tetris/</a>
+link to launch the web app: <a href="http://binghuan.github.io/tetris/" target="_blank">http://binghuan.github.io/tetris/</a>
 
 #### There are 5 different pieces in this version of Tetris
 
