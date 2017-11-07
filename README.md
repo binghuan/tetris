@@ -37,3 +37,6 @@ If this new piece happens offer no valid move, then the game is over and the pro
 
 <img src="images/Slide1.jpg" width="auto" height="480px"><br/>
 <img src="images/Slide2.jpg" width="auto" height="480px"><br/>
+
+<br/>
+Coding quest from "BaseCase"
