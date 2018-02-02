@@ -35,8 +35,8 @@ If the piece's new position is such that it allows no valid move, then a new pie
 
 If this new piece happens offer no valid move, then the game is over and the program exits. Good Luck!
 
-<img src="images/Slide1.jpg" width="auto" height="480px"><br/>
-<img src="images/Slide2.jpg" width="auto" height="480px"><br/>
+<img src="images/Slide1.png" width="auto" height="480px"><br/>
+<img src="images/Slide2.png" width="auto" height="480px"><br/>
 
 <br/>
 Coding quest from "BaseCase"
