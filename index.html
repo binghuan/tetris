@@ -41,6 +41,9 @@
     <button id="btn_reset" type="button" class="btn btn-default btn-lg">
         <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>Reset
     </button>
+    <button onClick="toggleMusic()">
+        <img id="speaker_img" src="./images/speaker_off.svg" style="width: 36px; height: 36px;">
+    </button>
     <br/>
 
 
@@ -92,6 +95,11 @@
             </div>
         </div>
     </div>
+
+    <audio id="music_player" preload src="Korobeiniki.mp3" loop>
+        Your browser does not support the audio element.
+    </audio>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
     <script src="js/jquery-2.2.2.min.js"></script>

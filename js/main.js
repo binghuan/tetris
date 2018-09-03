@@ -204,9 +204,9 @@ function clockWise(grid) {
 
 function isMoveAreaEmpty() {
     // check if moveArea is empty
-    var sum = moveArea.reduce(function(a, b) {
+    var sum = moveArea.reduce(function (a, b) {
         return a.concat(b)
-    }).reduce(function(a, b) {
+    }).reduce(function (a, b) {
         return a + b
     });
 
@@ -402,6 +402,19 @@ function moveRight() {
     }
 }
 
+function toggleMusic() {
+    let player = document.getElementById("music_player");
+    let speakerImg = document.getElementById("speaker_img");
+    console.log(">> toggleMusic", speakerImg.src);
+    if (speakerImg.src.indexOf("speaker_off.svg") != -1) {
+        speakerImg.src = "./images/speaker_on.svg";
+        player.play();
+    } else {
+        speakerImg.src = "./images/speaker_off.svg";
+        player.pause();
+    }
+}
+
 // Action: 1
 function moveLeft() {
     lastAction = 1;
@@ -429,7 +442,7 @@ var containner = null;
 var btnDown = null;
 var gameControllerID = null;
 
-$(document).keyup(function(e) {
+$(document).keyup(function (e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 
     var keyCode = e.keyCode || e.which,
@@ -536,7 +549,7 @@ function clockWise() {
     var pos2 = getMoveRange(newArea);
     if (pos2.maxY < 22 && pos2.maxX < 21 && pos2.minX > 0 && pos2.minY > 0) {
         console.log("Good to go?", pos2);
-        for(var i =0; i< 3; i++) {
+        for (var i = 0; i < 3; i++) {
             moveArea = rotate90(moveArea);
         }
     } else {
@@ -549,7 +562,7 @@ function clockWise() {
     diff = pos2.minX - pos1.minX;
     console.log(">> clockWise: diffY", diff);
     correctXmove(diff);
-    if(pos2 = getMoveRange(moveArea).maxX >= 21) {
+    if (pos2 = getMoveRange(moveArea).maxX >= 21) {
         moveArea = originalPos;
         console.log("c Cannnot rotate!!")
     }
@@ -580,8 +593,8 @@ function correctYmove(diff) {
 }
 
 function rotate90(a) {
-    a = Object.keys(a[0]).map(function(c) {
-        return a.map(function(r) {
+    a = Object.keys(a[0]).map(function (c) {
+        return a.map(function (r) {
             return r[c];
         });
     });
@@ -595,11 +608,11 @@ function rotate90(a) {
 var currentLv = 9;
 
 function getInterval() {
-    return (10 - currentLv)*100;
+    return (10 - currentLv) * 100;
 }
 
 function startWithNewLv() {
-    if(gameControllerID != null) {
+    if (gameControllerID != null) {
         clearInterval(gameControllerID);
         gameControllerID = setInterval(gameController, getInterval());
     }
@@ -608,11 +621,11 @@ function startWithNewLv() {
 function setupLv(level) {
 
     console.log("setupLv:", level);
-    $("#lv_" + currentLv ).attr("class", "");
+    $("#lv_" + currentLv).attr("class", "");
     currentLv = level;
-    $("#lv_" + currentLv ).attr("class", "active");
+    $("#lv_" + currentLv).attr("class", "active");
 
-    if(gameControllerID != null) {
+    if (gameControllerID != null) {
         clearInterval(gameControllerID);
         gameControllerID = setInterval(gameController, getInterval());
     }
@@ -620,44 +633,44 @@ function setupLv(level) {
 
 var msgLabel = null;
 
-$(document).ready(function() {
+$(document).ready(function () {
     containner = document.getElementById("containner");
 
     msgLabel = document.getElementById("message");
 
-    $("#btn_down").click(function() {
+    $("#btn_down").click(function () {
         if (gameControllerID) {
             clearInterval(gameControllerID);
             gameControllerID = null;
         }
         gameController();
     });
-    $("#btn_pause").click(function() {
+    $("#btn_pause").click(function () {
         console.log("### PAUSE");
         clearInterval(gameControllerID);
     });
-    $("#btn_autorun").click(function() {
+    $("#btn_autorun").click(function () {
         gameControllerID = setInterval(gameController, getInterval());
     });
 
-    $("#lv_down").click(function() {
+    $("#lv_down").click(function () {
         console.log("lv down");
-        if(currentLv -1 > 0) {
+        if (currentLv - 1 > 0) {
             setupLv(currentLv - 1);
         }
 
     });
 
-    $("#lv_up").click(function() {
+    $("#lv_up").click(function () {
         console.log("lv down");
-        if(currentLv + 1 < 10) {
+        if (currentLv + 1 < 10) {
             setupLv(currentLv + 1);
         }
 
     });
 
 
-    $("#btn_reset").click(function() {
+    $("#btn_reset").click(function () {
         if (gameControllerID) {
             clearInterval(gameControllerID);
             gameControllerID = null;
